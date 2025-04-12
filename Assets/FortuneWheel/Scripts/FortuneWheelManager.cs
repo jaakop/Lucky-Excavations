@@ -16,7 +16,7 @@ public class FortuneWheelManager : MonoBehaviour
 	public Button FreeTurnButton;				// This button is showed when you can turn the wheel for free
 	public GameObject Circle; 					// Rotatable GameObject on scene with reward objects
 	public Text DeltaCoinsText; 				// Pop-up text with wasted or rewarded coins amount
-	public Text CurrentCoinsText; 				// Pop-up text with wasted or rewarded coins amount
+	public TMPro.TMP_Text CurrentCoinsText; 				// Pop-up text with wasted or rewarded coins amount
 	public GameObject NextTurnTimerWrapper;
 	public Text NextFreeTurnTimerText;			// Text element that contains remaining time to next free turn
 
@@ -31,7 +31,7 @@ public class FortuneWheelManager : MonoBehaviour
 	private float _finalAngle;					// The final angle is needed to calculate the reward
 	private float _startAngle;    				// The first time start angle equals 0 but the next time it equals the last final angle
 	private float _currentLerpRotationTime;		// Needed for spinning animation
-	private int _currentCoinsAmount = 1000;		// Started coins amount. In your project it should be picked up from CoinsManager or from PlayerPrefs and so on
+	private float _currentCoinsAmount = 0;		// Started coins amount. In your project it should be picked up from CoinsManager or from PlayerPrefs and so on
 	private int _previousCoinsAmount;
 
 	// Here you can set time between two free turns
@@ -65,9 +65,11 @@ public class FortuneWheelManager : MonoBehaviour
 
 	private FortuneWheelSector _finalSector;
 
+	private ItemDetector itemDetector;
+
 	private void Awake ()
 	{
-		_previousCoinsAmount = _currentCoinsAmount;
+		//_previousCoinsAmount = _currentCoinsAmount;
 		// Show our current coins amount
 		CurrentCoinsText.text = _currentCoinsAmount.ToString ();
 
@@ -88,6 +90,8 @@ public class FortuneWheelManager : MonoBehaviour
 		} else {
 			NextTurnTimerWrapper.gameObject.SetActive (false);
 		}
+
+		itemDetector = FindAnyObjectByType<ItemDetector>();
 	}
 
 	private void TurnWheelForFree() { TurnWheel (true);	}
@@ -136,7 +140,7 @@ public class FortuneWheelManager : MonoBehaviour
 		// Stop the wheel
 		_isStarted = true;
 
-		_previousCoinsAmount = _currentCoinsAmount;
+		//_previousCoinsAmount = _currentCoinsAmount;
 
 		// Decrease money for the turn if it is not free turn
 		if (!isFree) {
@@ -251,7 +255,8 @@ public class FortuneWheelManager : MonoBehaviour
 	/// <param name="awardCoins">Coins for user</param>
 	public void RewardCoins (int awardCoins)
 	{
-		_currentCoinsAmount += awardCoins;
+		_currentCoinsAmount += awardCoins * itemDetector.item.GetSellingValue();;
+		itemDetector.ClearItem();
 		// Show animated delta coins
 		DeltaCoinsText.text = String.Format("+{0}", awardCoins);
 		DeltaCoinsText.gameObject.SetActive (true);
@@ -278,9 +283,11 @@ public class FortuneWheelManager : MonoBehaviour
 			yield return new WaitForEndOfFrame ();
 		}
 
-		_previousCoinsAmount = _currentCoinsAmount;
+		//_previousCoinsAmount = _currentCoinsAmount;
 
-		CurrentCoinsText.text = _currentCoinsAmount.ToString ();
+		CurrentCoinsText.text = _currentCoinsAmount.ToString("0");
+
+		gameObject.SetActive(false);
 	}
 
 	// Change remaining time to next free turn every 1 second

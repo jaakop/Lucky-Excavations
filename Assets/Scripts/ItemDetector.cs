@@ -12,6 +12,8 @@ public class ItemDetector : MonoBehaviour
     
     private BoxCollider _boxCollider;
     
+    public SellingValueManager item {get; private set;}
+
     private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
@@ -25,5 +27,12 @@ public class ItemDetector : MonoBehaviour
         
         Debug.Log("Detected item: " + other.name);
         onItemDetected.Invoke();
+        item = other.GetComponent<SellingValueManager>();
+    }
+
+    public void ClearItem()
+    {
+        Destroy(item.gameObject);
+        item = null;
     }
 }
