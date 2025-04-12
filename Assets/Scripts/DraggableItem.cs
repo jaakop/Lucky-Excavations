@@ -19,6 +19,7 @@ public class DraggableItem : MonoBehaviour
     {
         _bIsBeingDragged = bInIsBeingDragged;
         _rb.useGravity = !_bIsBeingDragged;
+        _rb.constraints = _bIsBeingDragged ? RigidbodyConstraints.FreezeRotation : RigidbodyConstraints.None;
     }
     
     private void OnCollisionEnter(Collision collision)
