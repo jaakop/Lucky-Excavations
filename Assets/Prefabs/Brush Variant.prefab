@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 660234858157141214, guid: 594a1d2f23a1d794f957e59a8891a89d, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1420524436046309351}
     - target: {fileID: 2664873261216158684, guid: 594a1d2f23a1d794f957e59a8891a89d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.93
@@ -84,6 +84,11 @@ PrefabInstance:
 --- !u!4 &2224020082513433795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2664873261216158684, guid: 594a1d2f23a1d794f957e59a8891a89d, type: 3}
+  m_PrefabInstance: {fileID: 4190254652852635423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5405560416204992288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8152270590816430143, guid: 594a1d2f23a1d794f957e59a8891a89d, type: 3}
   m_PrefabInstance: {fileID: 4190254652852635423}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8370018097184513801
@@ -213,10 +218,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnBeginDragged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5405560416204992288}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnStopDragging:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5405560416204992288}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   forceMultiplier: 5
   maxSpeed: 10
   dragHeight: 2
