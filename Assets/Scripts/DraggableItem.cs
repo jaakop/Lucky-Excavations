@@ -19,9 +19,6 @@ public class DraggableItem : MonoBehaviour
     {
         _bIsBeingDragged = bInIsBeingDragged;
         _rb.useGravity = !_bIsBeingDragged;
-        
-        // Zero out velocity for more predictable behaviour
-        _rb.linearVelocity = Vector3.zero;
     }
     
     private void OnCollisionEnter(Collision collision)
