@@ -8,6 +8,8 @@ public class DraggableTool : Draggable
 
     public bool BeingUsed {get; protected set;}
 
+    public ToolType toolType;
+
     protected override void Awake()
     {
         base.Awake();
@@ -27,4 +29,9 @@ public class DraggableTool : Draggable
             BeingUsed = false;
         }
     }
+}
+
+public enum ToolType
+{
+    Shovel
 }
