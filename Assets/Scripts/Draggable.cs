@@ -12,9 +12,17 @@ public abstract class Draggable : MonoBehaviour
     public UnityEvent OnBeginDragged = new();
     public UnityEvent OnStopDragging = new();
 
+    private Quaternion targerRot;
+
+    [SerializeField]
+    private float activeRotationForce = 20;
+    [SerializeField]
+    private float passiveRotationForce = 20;
+
     protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        targerRot = transform.rotation;
     }
 
     protected void Start()
@@ -37,7 +45,10 @@ public abstract class Draggable : MonoBehaviour
     private void FixedUpdate()
     {
         if (_bIsBeingDragged)
+        {
             DragItemToLocation(GetCursorLocationOnPlane());
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targerRot, passiveRotationForce * Time.fixedDeltaTime);
+        }
     }
 
     private Vector3 GetCursorLocationOnPlane()
@@ -90,5 +101,7 @@ public abstract class Draggable : MonoBehaviour
         if (_rb.linearVelocity.magnitude > maxSpeed) {
             _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;
         }
+
+        transform.Rotate(Vector3.forward, -direction.x * distance * activeRotationForce * Time.fixedDeltaTime);
     }
 }
