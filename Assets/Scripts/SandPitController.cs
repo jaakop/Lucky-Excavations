@@ -11,6 +11,9 @@ public class SandPitController : MonoBehaviour
     private GameObject relicSpotPrefab;
 
     [SerializeField]
+    private GameObject GeodePrefab;
+
+    [SerializeField]
     private GameObject[] itemPrefabs;
 
     private List<GameObject> relicSports = new();
@@ -49,10 +52,11 @@ public class SandPitController : MonoBehaviour
         }
         relicSports.Clear();
 
-        var item = Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
+        var item = Instantiate(GeodePrefab);
         item.transform.rotation = Random.rotation;
-        pos.y = 1;
+        //pos.y = 0f;
         item.transform.position = pos;
+        item.GetComponent<Geode>().item = itemPrefabs[Random.Range(0, itemPrefabs.Length)];
 
         GenerateRelicSpots();
     }
