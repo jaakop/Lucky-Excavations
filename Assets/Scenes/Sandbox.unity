@@ -249,6 +249,7 @@ MonoBehaviour:
   relicSpotPrefab: {fileID: 839488267119906793, guid: c9d6a23fdddd706429dd1f8ce0b9d0bc, type: 3}
   itemPrefabs:
   - {fileID: 2233442639179415712, guid: 3ec4148f620cbda4babbf88e97b4f7dc, type: 3}
+  - {fileID: 3705482021933006504, guid: 0af33ae01079ffc41a3b795c7c0d28c7, type: 3}
   - {fileID: 7338831819356880793, guid: bbf076c9bfe0e4f49a980dda1c5dd370, type: 3}
   - {fileID: 1719805725905268869, guid: f0842ae25edeec54cb978ceca7bd60c9, type: 3}
   - {fileID: 2292934536871846656, guid: 10bc42305125b5d4e88fd2a4b22ac8fb, type: 3}
@@ -256,7 +257,6 @@ MonoBehaviour:
   - {fileID: 5940877845712502442, guid: ad70f52546c529a46b8613567bb63486, type: 3}
   - {fileID: 3007871854250935919, guid: e466550a5d83e41418e31371fd18e189, type: 3}
   - {fileID: 8854227450171265687, guid: f395e1bec2aa52f4b94afbbd15397bd2, type: 3}
-  - {fileID: 3705482021933006504, guid: 0af33ae01079ffc41a3b795c7c0d28c7, type: 3}
 --- !u!1 &499558089
 GameObject:
   m_ObjectHideFlags: 0
