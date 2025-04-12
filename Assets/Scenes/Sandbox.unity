@@ -499,6 +499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf83d30bbbdc774a94e9ce5072ed87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnBeginDragged:
+    m_PersistentCalls:
+      m_Calls: []
   forceMultiplier: 5
   maxSpeed: 10
 --- !u!114 &910908437
@@ -513,7 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d7651669a404945b37cd841b7f0eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cracksTexture: {fileID: 2800000, guid: 5d3a268b3321dda43a8ab3a7ddfd4232, type: 3}
   minimumDamage: 10
   damageMultiplier: 2
   dirtiness: 100
@@ -780,6 +782,63 @@ MonoBehaviour:
   bUseVelocityMultiplier: 1
   bResetVelocityOnGrab: 1
   velocityMultiplier: 0
+--- !u!1001 &2730423561077113612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.36521
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.628232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765831240951303575, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906668100698089039, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
+      propertyPath: m_Name
+      value: HandheldShovel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bee2b77c77529164fae9c25f0a74c911, type: 3}
 --- !u!1001 &5265193317509929033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -873,5 +932,6 @@ SceneRoots:
   - {fileID: 499558091}
   - {fileID: 5265193317509929033}
   - {fileID: 910908435}
+  - {fileID: 2730423561077113612}
   - {fileID: 314426820}
   - {fileID: 1329336221}

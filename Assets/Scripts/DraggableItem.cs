@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SellingValueManager))]
@@ -9,6 +10,9 @@ public class DraggableItem : MonoBehaviour
     private Rigidbody _rb;
     private SellingValueManager _valueManager;
     private bool _bIsBeingDragged;
+
+    public UnityEvent OnBeginDragged = new();
+    public UnityEvent OnStopDragging = new();
 
     public SellingValueManager GetValueManager()
     {
@@ -20,6 +24,11 @@ public class DraggableItem : MonoBehaviour
         _bIsBeingDragged = bInIsBeingDragged;
         _rb.useGravity = !_bIsBeingDragged;
         _rb.constraints = _bIsBeingDragged ? RigidbodyConstraints.FreezeRotation : RigidbodyConstraints.None;
+
+        if(_bIsBeingDragged)
+            OnBeginDragged.Invoke();
+        else
+            OnStopDragging.Invoke();
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -54,7 +63,14 @@ public class DraggableItem : MonoBehaviour
         
             if (gamePlane.Raycast(mouseCameraRay, out float distance))
             {
-                return mouseCameraRay.GetPoint(distance);
+                var pos = mouseCameraRay.GetPoint(distance);
+
+                if(Physics.Raycast(new Ray(transform.position, Vector3.down), out var groundHit))
+                {
+                    pos.y = groundHit.point.y + dragHeight;
+                }
+                
+                return pos;
             }
         }
         return Vector3.zero;
@@ -65,6 +81,11 @@ public class DraggableItem : MonoBehaviour
     private float forceMultiplier = 5f;
     [SerializeField]
     private float maxSpeed = 10f;
+
+    [SerializeField]
+    protected float dragHeight = 2;
+
+
     private void DragItemToLocation(Vector3 location)
     {
         var direction = (location - transform.position).normalized;
