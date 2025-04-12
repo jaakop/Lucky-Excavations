@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d7651669a404945b37cd841b7f0eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirtyColor: {r: 0.38679248, g: 0.14830379, b: 0, a: 1}
   minimumDamage: 10
   damageMultiplier: 2
   dirtiness: 100

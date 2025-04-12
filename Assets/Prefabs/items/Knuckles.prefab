@@ -69,6 +69,10 @@ PrefabInstance:
       value: Knuckles
       objectReference: {fileID: 0}
     - target: {fileID: 7205140776170859923, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205140776170859923, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5069914c9065a9c4b8ec5d99422d77e4, type: 2}
@@ -160,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d7651669a404945b37cd841b7f0eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirtyColor: {r: 0.38679248, g: 0.14830379, b: 0, a: 1}
   minimumDamage: 10
   damageMultiplier: 2
   dirtiness: 100

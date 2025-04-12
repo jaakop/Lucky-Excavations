@@ -18,6 +18,18 @@ public class DraggableItem : Draggable
             _valueManager.HandleCollisionDamage(collision.relativeVelocity.magnitude);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<DraggableTool>(out var tool))
+        {
+            if(!tool.BeingUsed ||tool.toolType != ToolType.Brush)
+                return;
+            if(!other.isTrigger)
+                return;
+            _valueManager.PerformCleaning();
+        }
+    }
+
     protected override void Awake()
     {
         base.Awake();

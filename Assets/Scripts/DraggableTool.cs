@@ -10,6 +10,9 @@ public class DraggableTool : Draggable
 
     public ToolType toolType;
 
+    [SerializeField]
+    private float useHeight = 0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -20,7 +23,7 @@ public class DraggableTool : Draggable
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            dragHeight = -1;
+            dragHeight = useHeight;
             BeingUsed = true;
         }
         else
@@ -33,5 +36,6 @@ public class DraggableTool : Draggable
 
 public enum ToolType
 {
-    Shovel
+    Shovel,
+    Brush,
 }

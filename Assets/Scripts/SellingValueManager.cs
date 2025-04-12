@@ -5,15 +5,32 @@ public class SellingValueManager : MonoBehaviour
 {
     [FormerlySerializedAs("CracksVisibility")]
     [Header("Visuals")]
-    private Renderer _objectRenderer;
+    private Renderer[] _objectRenderer;
     private MaterialPropertyBlock _propertyBlock;
     private static readonly int CracksTex = Shader.PropertyToID("_CracksTex");
     private static readonly int CracksVisibility = Shader.PropertyToID("_CracksVisibility");
 
+    private Color targetColor;
+    private float targetSmooth;
+    [SerializeField]
+    private Color dirtyColor;
+
     private void Start()
     {
-        _objectRenderer = GetComponent<Renderer>();
+        _objectRenderer = GetComponentsInChildren<Renderer>();
         _propertyBlock = new MaterialPropertyBlock();
+
+        targetColor = _objectRenderer[0].material.color;
+        targetSmooth = _objectRenderer[0].material.GetFloat("_Smoothness");
+
+        foreach(var renderer in _objectRenderer)
+        {
+            foreach (var material in renderer.materials)
+            {
+                material.color = dirtyColor; 
+                material.SetFloat("_Smoothness", 0);
+            }
+        }
         
         UpdateDamageVisual();
     }
@@ -48,6 +65,15 @@ public class SellingValueManager : MonoBehaviour
         dirtiness -= cleaningStep;
         if(dirtiness < 0)
             dirtiness = 0;
+
+        foreach(var renderer in _objectRenderer)
+        {
+            foreach (var material in renderer.materials)
+            {
+                material.SetFloat("_Smoothness", Mathf.Lerp(0, targetSmooth, 1 - dirtiness / 100));
+                material.color = Color.Lerp(dirtyColor, targetColor, 1 - dirtiness / 100);
+            }
+        }
     }
     public void HandleCollisionDamage(float velocityMagnitude)
     {
