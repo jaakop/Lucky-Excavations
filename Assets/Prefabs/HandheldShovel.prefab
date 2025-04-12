@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2576074860009036939}
   - component: {fileID: 3059931779400697554}
   - component: {fileID: 2236974312004341862}
-  - component: {fileID: 8370399409181332651}
+  - component: {fileID: 7152881312998574253}
   m_Layer: 0
   m_Name: HandheldShovel
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906668100698089039}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.33, y: 1.36521, z: 1.628232}
   m_LocalScale: {x: 3.7135, y: 3.7135, z: 3.7135}
   m_ConstrainProportionsScale: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   dirtiness: 100
   cleaningStep: 20
   maxSellingValue: 1000
---- !u!114 &8370399409181332651
+--- !u!114 &7152881312998574253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,8 +165,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1906668100698089039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf83d30bbbdc774a94e9ce5072ed87e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e42d2469f69354449e4b0c68805771e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnBeginDragged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopDragging:
+    m_PersistentCalls:
+      m_Calls: []
   forceMultiplier: 5
   maxSpeed: 10
+  dragHeight: 2

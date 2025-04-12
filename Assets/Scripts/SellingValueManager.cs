@@ -64,18 +64,4 @@ public class SellingValueManager : MonoBehaviour
     {
         return velocityMagnitude * damageMultiplier + minimumDamage;
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PerformCleaning();
-            Debug.Log("Performed cleaning. New dirtiness: " + dirtiness);
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Debug.Log("Current selling value (for " + gameObject.name + "): " + GetSellingValue());
-        }
-    }
 }

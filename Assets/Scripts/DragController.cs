@@ -13,7 +13,7 @@ public class DragController : MonoBehaviour
     
     Camera mainCamera;
 
-    DraggableItem currentItem;
+    Draggable currentItem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,7 +43,7 @@ public class DragController : MonoBehaviour
     {
         if(Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hitInfo))
         {
-            if(!hitInfo.collider.TryGetComponent<DraggableItem>(out var item))
+            if(!hitInfo.collider.TryGetComponent<Draggable>(out var item))
             {
                 return;
             }
