@@ -161,17 +161,7 @@ public class FortuneWheelManager : MonoBehaviour
 
 	public void TurnWheelButtonClick ()
 	{
-		if (_isFreeTurnAvailable) {
 			TurnWheelForFree ();
-		} else {
-			// If we have enabled paid turns
-			if (IsPaidTurnEnabled) {
-				// If player have enough coins
-				if (_currentCoinsAmount >= TurnCost) {
-					TurnWheelForCoins ();
-				}
-			}
-		}
 	}
 
 	public void SetNextFreeTime() {

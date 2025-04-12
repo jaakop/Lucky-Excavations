@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skibidi
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e02b1f68d80fee0418102457807d3b60, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: e02b1f68d80fee0418102457807d3b60, type: 3}

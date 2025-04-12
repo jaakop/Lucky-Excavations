@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pepe_Plush
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: beac9cb89ca4e4a4ea18037c80a0092d, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

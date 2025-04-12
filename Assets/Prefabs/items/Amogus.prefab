@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Amogus
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6430c4ea5351ccc41a2b3a22e01ae92a, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 6006386246052407379, guid: 6430c4ea5351ccc41a2b3a22e01ae92a, type: 3}
       propertyPath: m_IsActive
       value: 1
