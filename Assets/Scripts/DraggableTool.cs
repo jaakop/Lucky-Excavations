@@ -6,6 +6,8 @@ public class DraggableTool : Draggable
 {
     private float initialDragHeigh;
 
+    public bool BeingUsed {get; protected set;}
+
     protected override void Awake()
     {
         base.Awake();
@@ -17,10 +19,12 @@ public class DraggableTool : Draggable
         if(Input.GetKey(KeyCode.Space))
         {
             dragHeight = -1;
+            BeingUsed = true;
         }
         else
         {
             dragHeight = initialDragHeigh;
+            BeingUsed = false;
         }
     }
 }
