@@ -79,5 +79,84 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4533578108422961456}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7907128369430431839}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8242743959189465275}
   m_SourcePrefab: {fileID: 100100000, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
+--- !u!1 &2292934536871846656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
+  m_PrefabInstance: {fileID: 1374523683585236561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &-4533578108422961456
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292934536871846656}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-7907128369430431839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292934536871846656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf83d30bbbdc774a94e9ce5072ed87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnBeginDragged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopDragging:
+    m_PersistentCalls:
+      m_Calls: []
+  forceMultiplier: 5
+  maxSpeed: 10
+  dragHeight: 2
+--- !u!114 &-8242743959189465275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292934536871846656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d7651669a404945b37cd841b7f0eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumDamage: 10
+  damageMultiplier: 2
+  dirtiness: 100
+  cleaningStep: 20
+  maxSellingValue: 1000
