@@ -38,4 +38,5 @@ public enum ToolType
 {
     Shovel,
     Brush,
+    Pick,
 }

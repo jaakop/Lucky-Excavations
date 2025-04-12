@@ -216,6 +216,8 @@ MonoBehaviour:
   forceMultiplier: 5
   maxSpeed: 10
   dragHeight: 2
+  toolType: 0
+  useHeight: -1
 --- !u!1 &8152270590816430143
 GameObject:
   m_ObjectHideFlags: 0
