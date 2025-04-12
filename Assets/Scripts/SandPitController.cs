@@ -50,6 +50,7 @@ public class SandPitController : MonoBehaviour
         relicSports.Clear();
 
         var item = Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
+        item.transform.rotation = Random.rotation;
         pos.y = 1;
         item.transform.position = pos;
 
