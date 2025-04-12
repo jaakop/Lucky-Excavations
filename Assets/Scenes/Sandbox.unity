@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfRelicSpots: 5
   relicSpotPrefab: {fileID: 839488267119906793, guid: c9d6a23fdddd706429dd1f8ce0b9d0bc, type: 3}
+  GeodePrefab: {fileID: 7352814288569013765, guid: 1ac2a80c6a175ff47bfac552d3fcebb9, type: 3}
   itemPrefabs:
   - {fileID: 2233442639179415712, guid: 3ec4148f620cbda4babbf88e97b4f7dc, type: 3}
   - {fileID: 3705482021933006504, guid: 0af33ae01079ffc41a3b795c7c0d28c7, type: 3}
