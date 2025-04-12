@@ -2178,7 +2178,7 @@ GameObject:
   - component: {fileID: 114000010071751200}
   - component: {fileID: 114000011905410458}
   m_Layer: 5
-  m_Name: FortuneWheel Window
+  m_Name: OriginalWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
