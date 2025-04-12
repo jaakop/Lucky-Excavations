@@ -1,36 +1,46 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SellingValueManager))]
 public class DraggableItem : MonoBehaviour
 {
     private Camera _mainCam;
     private Rigidbody _rb;
+    private SellingValueManager _valueManager;
     private bool _bIsBeingDragged;
 
-    public void SetIsBeingDragged(bool bInIsBeingDragged)
+    public SellingValueManager GetValueManager()
+    {
+        return _valueManager;
+    }
+    
+    public void SetIsBeingDragged(bool bInIsBeingDragged, float velocityMultiplier = 1f)
     {
         _bIsBeingDragged = bInIsBeingDragged;
         _rb.useGravity = !_bIsBeingDragged;
+        
+        // Zero out velocity for more predictable behaviour
+        _rb.linearVelocity = Vector3.zero;
     }
     
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(_bIsBeingDragged)
+            _valueManager.HandleCollisionDamage(collision.relativeVelocity.magnitude);
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        _valueManager = GetComponent<SellingValueManager>();
     }
 
     private void Start()
     {
         _mainCam = Camera.main;
     }
-
-    private void Update()
-    {
-        // TODO Replace this with actual logic
-        if(Input.GetKeyDown(KeyCode.Space))
-            SetIsBeingDragged(true);
-        if(Input.GetKeyUp(KeyCode.Space))
-            SetIsBeingDragged(false);
-    }
+    
     private void FixedUpdate()
     {
         if (_bIsBeingDragged)
@@ -52,7 +62,7 @@ public class DraggableItem : MonoBehaviour
         return Vector3.zero;
     }
 
-    // Drag properties
+    [Header("Drag Properties")]
     [SerializeField]
     private float forceMultiplier = 5f;
     [SerializeField]

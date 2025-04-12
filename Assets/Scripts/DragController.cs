@@ -2,14 +2,23 @@ using UnityEngine;
 
 public class DragController : MonoBehaviour
 {
-    Camera camera;
+    // If true, dragged items will have their velocity multiplied by velocirtMultiplier when grabbed or let go of
+    [SerializeField]
+    private bool bUseVelocityMultiplier = true;
+    // If true, items will have their velocity reset to 0,0,0 when grabbed (but not when let go of)
+    [SerializeField]
+    private bool bResetVelocityOnGrab = true;
+    [SerializeField]
+    private float velocityMultiplier = 0f;
+    
+    Camera mainCamera;
 
     DraggableItem currentItem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        camera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -24,21 +33,25 @@ public class DragController : MonoBehaviour
         {
             if(currentItem == null)
                 return;
-            currentItem.SetIsBeingDragged(false);
+            var finalVelocityMultiplier = bUseVelocityMultiplier ? velocityMultiplier : 1f;
+            currentItem.SetIsBeingDragged(false, finalVelocityMultiplier);
             currentItem = null;
         }
     }
 
     void ShootRay() 
     {
-        if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out var hitInfo))
+        if(Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hitInfo))
         {
             if(!hitInfo.collider.TryGetComponent<DraggableItem>(out var item))
             {
                 return;
             }
-
-            item.SetIsBeingDragged(true);
+            
+            // It's probably possible to avoid calculating this if bResetVelocityOnGrab is true, but I don't care enough
+            var finalVelocityMultiplier = bUseVelocityMultiplier ? velocityMultiplier : 1f;
+            
+            item.SetIsBeingDragged(true, bResetVelocityOnGrab ? 0 : finalVelocityMultiplier);
             currentItem = item;
         }
     }
