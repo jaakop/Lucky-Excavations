@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3ea3db2b78a320428dde2d3e549ea39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -153,6 +153,8 @@ MonoBehaviour:
   OnStopDragging:
     m_PersistentCalls:
       m_Calls: []
+  activeRotationForce: 20
+  passiveRotationForce: 20
   forceMultiplier: 5
   maxSpeed: 10
   dragHeight: 2
