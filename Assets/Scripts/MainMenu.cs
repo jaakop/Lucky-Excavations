@@ -14,7 +14,11 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseGame();
+        }
+        else if(Input.anyKeyDown)
         {
             if(Input.GetMouseButtonDown(0))
                 return;
@@ -33,5 +37,13 @@ public class MainMenu : MonoBehaviour
     public void SetCanStart(bool canStart)
     {
         this.canStart = canStart;
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+        #endif
     }
 }
