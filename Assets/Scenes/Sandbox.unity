@@ -1349,11 +1349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35977810922530607, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 43
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 35977810922530607, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: -57
       objectReference: {fileID: 0}
     - target: {fileID: 35977810922530607, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -1538,6 +1538,14 @@ PrefabInstance:
     - target: {fileID: 6940972659818367661, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710710366339669097, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
+      propertyPath: m_Text
+      value: SCAMMED
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710710366339669097, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8071721731220627976, guid: f90ef37be8a581645a66c31b29ee97da, type: 3}
       propertyPath: m_IsActive
