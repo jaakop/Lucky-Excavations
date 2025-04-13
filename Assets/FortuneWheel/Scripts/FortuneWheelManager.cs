@@ -32,6 +32,7 @@ public class FortuneWheelManager : MonoBehaviour
 	private float _startAngle;    				// The first time start angle equals 0 but the next time it equals the last final angle
 	private float _currentLerpRotationTime;		// Needed for spinning animation
 	private float _currentCoinsAmount = 0;		// Started coins amount. In your project it should be picked up from CoinsManager or from PlayerPrefs and so on
+	public float CurrentCoints => _currentCoinsAmount;
 	private int _previousCoinsAmount;
 
 	// Here you can set time between two free turns
@@ -67,6 +68,8 @@ public class FortuneWheelManager : MonoBehaviour
 
 	private ItemDetector itemDetector;
 
+	private GameController gameController;
+
 	private void Awake ()
 	{
 		//_previousCoinsAmount = _currentCoinsAmount;
@@ -92,6 +95,7 @@ public class FortuneWheelManager : MonoBehaviour
 		}
 
 		itemDetector = FindAnyObjectByType<ItemDetector>();
+		gameController = FindAnyObjectByType<GameController>();
 	}
 
 	private void TurnWheelForFree() { TurnWheel (true);	}
@@ -288,6 +292,7 @@ public class FortuneWheelManager : MonoBehaviour
 		CurrentCoinsText.text = _currentCoinsAmount.ToString("0");
 
 		gameObject.SetActive(false);
+		gameController.OnItemSold();
 	}
 
 	// Change remaining time to next free turn every 1 second

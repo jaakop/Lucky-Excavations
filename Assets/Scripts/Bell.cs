@@ -7,8 +7,12 @@ public class Bell : MonoBehaviour
 
     private Vector3[] initPositions;
 
+    private AudioSource audioSource;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         initPositions = new Vector3[tools.Length];
 
         for(int i = 0; i < tools.Length; i++)
@@ -23,5 +27,6 @@ public class Bell : MonoBehaviour
         {
             tools[i].transform.position = initPositions[i];
         }
+        audioSource.Play();
     }
 }
