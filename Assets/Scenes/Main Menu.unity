@@ -217,7 +217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Created by:\nAaron \nAnatoli  \nJaakko \n\nMusic:\nSebu"
+  m_text: "Created by:\nAaron \nAnatolii \nJaakko "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1148,23 +1148,60 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Models:
 
-    -
+    (Sketchfab)
 
-    -
+    Thick amongus -  mothyyyyyy
 
-    -
+    Stylized
+    Skibidi toilet - Asp
 
-    -
+    FREE Pepe Plush - Beeean
 
-    -
+    Knuckles - tidiestflyer
 
-    -
+    Fidget
+    Spinner - Boy Best
 
-    -
+    WSB 3d Print - wintrez
 
-    -
+    Plankton - 1ooooJ0Y
 
-    -'
+    BOMBARDIRO
+    CROCODILO - Aizen
+
+    Tung tung tung sahurr - miga_vfx
+
+    Horno romano bajoimperial
+    excavado en 2020 - LDGP Geometric Documentation of Heritage Lab.
+
+    wooden
+    box #4 - DZs
+
+    Lantern - Mandrake
+
+    Wooden Table - Prateek.Sharma
+
+    Painting
+    Stand with Painting - TheGuy
+
+    
+
+    
+
+    Music:
+
+    (Chosic)
+
+    Monkeys
+    Spinning Monkeys Kevin MacLeod (incompetech.com)
+
+    Licensed under Creative
+    Commons: By Attribution 3.0 License
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    Music
+    promoted by https://www.chosic.com/free-music/all/'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1191,8 +1228,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
